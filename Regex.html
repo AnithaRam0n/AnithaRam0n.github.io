@@ -3,11 +3,18 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Anitha AL176946</title>
+    <title>AnithaRegex AL176946</title>
     <link rel="shortcut icon" href="#">
     <!-- ↓↓↓↓ link para agregar el estilo de bootstrap ↓↓↓↓ -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   </head>
+  <style>
+		table, th, td {
+			border: 1px solid black;
+			border-collapse: collapse;
+			padding: 5px;
+		}
+	</style>
   <body> <!-- -->
     <!-- container es una clase para manejar el contenido de la página y que se vea ordenado
     y centrado, para ver la diferencia (y la utilidad de eso), se puede borrar la clase 
@@ -17,7 +24,11 @@
             <span class="fs-4">Ana Patricia Ramon Arellano - Matrícula: 176946 - Seguridad de la información</span> <!--fs= font size-->
             </a>
         </header>
-
+    <style>
+      .highlight {
+        background-color: rgb(195, 155, 211);
+      }
+    </style>
         <!--rounded se refiere a lo redondeado de los bordes-->
         <div class="text-light rounded-top" style="background-color: rgb(74, 35, 90);"> 
             <div class="container-fluid py-2">
@@ -27,17 +38,26 @@
 
      <div class="text-light rounded-top" style="background-color: rgb(0,0,0);"> 
             <p id="texto">
-            <p class="text-left">Jenny, I got your number</p>
-            <p class="text-left">Jenny, don’t change your number</p>
-            <p class="text-left">I need to make you mine</p>
-            <p class="text-left">867-5309</p>
-            <p class="text-left">Jenny, Jenny, you’re the girl for me</p>
-            <p class="text-left">I need to make you mine</p>
-            <p class="text-left">Jenny, don’t change your number</p>
-            <p class="text-left">867-5309</p>
-              
+            Jenny, I got your number<br><br>
+            Jenny, don’t change your number<br><br>
+            I need to make you mine<br><br>
+            867-5309<br><br>
+            Jenny, Jenny, you’re the girl for me<br><br>
+            I need to make you mine<br><br>
+            Jenny, don’t change your number<br><br>
+            867-5309 id="txt"<br><br>
+   
              </p>
+       <script>
+      const regex = /(\b\d{3}-\d{4}\b|\bJ\w+y\b)/g;
+      const content = document.querySelector('p');
+      content.innerHTML = content.innerHTML.replace(regex, '<span class="highlight">$&</span>');
+      
+    document.getElementById('resultado').innerHTML = content;
+    </script>
             </div>
+
+
         
 
         Regex aplicado: 
@@ -46,24 +66,41 @@
         </div>
         <br><br>
         Significado:
-
+        <br><br>
           
             <div class="text-light rounded-top" style="background-color: rgb(0, 0, 0);"> 
             <div class="container-fluid py-2">
         
          <p class="text-left">Todas las palabras que contengan siete numeros separados por un guion en el tercer numero</p>
-         <p class="text-left">todas las palabras que empiezen con "J" y terminen con "y"</p>
+         <p class="text-left">Todas las palabras que empiezen con "J" y terminen con "y"</p>
          
         </div>
         </div>
-
-        <div class="p-3 my-3 bg-danger text-light rounded-4"> <!--bg-danger= fondo rojizo; my = margen en eje Y (arriba y abajo)-->
-            <div class="container-fluid">
-            <p id="palabrasResultado">
-                
-            </p>
-            </div>
-        </div>
+        
+        <br>
+        Resultado:
+        
+<script>
+     window.onload = function() {
+        var regex1 = /\b\d{3}-\d{4}\b/g; 
+        var regex2 = /\bJ\w*y\b/g; 
+        var text = document.body.innerHTML;
+        var matches1 = text.match(regex1);
+        var matches2 = text.match(regex2);
+        var table = document.createElement('table');
+        for (var i = 0; i < matches1.length || i < matches2.length; i++) {
+          var row = table.insertRow();
+          var cell1 = row.insertCell();
+          cell1.innerHTML = matches1[i] || '';
+          var cell2 = row.insertCell();
+          cell2.innerHTML = matches2[i] || '';
+        }
+        document.body.appendChild(table);
+      };
+       
+    </script>
+  
+            
 
     </div>
 
@@ -72,3 +109,4 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
   </body>
 </html>
+
