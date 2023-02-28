@@ -1,14 +1,22 @@
-function login()
-{
-    var user,password1
-    user = document.getElementById("username").value;
-    password1 = document.getElementById("password").value;
-    if( user=="Anitha" && password=="176946" )
-    {
-        window.location = "bienvenido.html";
-    }
-    else
-    {
-        alert("Usuario no autorizado")
-    }
-}
+const database=[
+		  {
+		  	Username:'Anitha',
+		  	Password:'176946',
+		  },
+		];
+		  const btn=document.querySelector("#btn");
+		  btn.addEventListener('click',()=>{
+		  	// alert("Hello");
+		  	const user=document.querySelector("#user").value;
+		  	const pass=document.querySelector("#pswd").value;
+		  	for( let i=0;i<database.length;i++){
+		  		if(user==database[i].Username && pass==database[i].Password)
+		  		{
+		  			console.log(user+" Logined in");
+            
+		  			window.open('7bienvenido.html','_blank');
+		  			return;
+		  		}
+           }
+           console.log("failed");
+		  })
