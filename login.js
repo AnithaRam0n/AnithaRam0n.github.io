@@ -1,8 +1,8 @@
 function login()
 {
     var user,password
-    user = document.getElementById("inputuser").value;
-    password = document.getElementById("inputPassword").value;
+    user = document.getElementById("user").value;
+    password = document.getElementById("password").value;
     if( user=="Anitha" && password=="176946" )
     {
         window.location = "index.html";
