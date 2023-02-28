@@ -3,16 +3,139 @@
 <body>
 <head>  
 <meta name="viewport" content="width=device-width, initial-scale=1">  
-<title> Login Page </title>  
+<title> Login Page </title>
+  <style> 
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  background-image: url('https://img.freepik.com/foto-gratis/fondo-espacio-exterior_53876-88651.jpg'); 
+  overflow-x: hidden;
+  background-repeat: no repeat;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+
+
+ 
+}
+
+
+
+
+/* ########################################################## */
+
+h1 {
+  color: white;
+
+  font-size: 35px;
+  font-weight: 800;
+}
+
+.flex-container {
+  width: 100vw;
+
+  margin-top: 60px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-container {
+  width: 500px;
+  height: 350px;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 500px;
+  height: 350px;
+
+  margin-top: 5px;
+  padding-top: 20px;
+
+  border-radius: 12px;
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  background: #0C090A;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.199);
+}
+
+.subtitle {
+  font-size: 11px;
+
+  color: rgba(177, 177, 177, 0.3);
+}
+
+input {
+  border: none;
+  border-bottom: solid rgb(143, 143, 143) 1px;
+
+  margin-bottom: 30px;
+
+  background: none;
+  color: rgba(255, 255, 255, 0.555);
+
+  height: 35px;
+  width: 300px;
+}
+
+.submit-btn {
+  cursor: pointer;
+
+  border: none;
+  border-radius: 8px;
+
+  box-shadow: 2px 2px 7px #737CA1;
+
+  background: #4863A0;
+  color: rgba(255, 255, 255, 0.8);
+
+  width: 80px;
+
+  transition: all 1s;
+}
+
+.submit-btn:hover {
+  color: rgb(255, 255, 255);
+
+  box-shadow: none;
+}
+
+</style>
+<div class="flex-container">
+  <div class="content-container">
+    <div class="form-container">
+<h1>Login</h1>
 <form id="login-form">
-  <label for="username">Usuario:</label>
+  
+    <span class="subtitle">USERNAME:</span>
   <input type="text" id="username" name="username" required>
   <br>
-  <label for="password">Contraseña:</label>
+ <span class="subtitle">PASSWORD:</span>
+
   <input type="password" id="password" name="password" required>
   <br>
-  <input type="submit" value="Iniciar sesión">
+  <input type="submit" value="Login" class="submit-btn">
 </form>
+ </div>
+  </div>
+</div>
+
 <script>
   const form = document.getElementById('login-form');
   form.addEventListener('submit', function(event) {
@@ -26,7 +149,7 @@
     const contraseña = document.getElementById('password').value;
     
     // Validar usuario y contraseña
-    if (usuario === 'admin' && contraseña === '12345') {
+    if (usuario === 'Anitha' && contraseña === '176946') {
       window.location.href = 'https://anitharam0n.github.io/bienvenido.html';
     } else {
       alert('Usuario o contraseña incorrectos');
