@@ -117,27 +117,31 @@ input {
 </style>   
 </head>    
 <body>
-  <script>
-    function validateform(){
-      var username = document.forms["myForm"]["username"].value;
-      var password = document.forms["myForm"]["password"].value;
-      if (username == "Anitha" && password == "176946")
-      {
-        window.location = "bienvenido.html"
-        return true;
-      }
-      else
-      {
-        alert("Error")
-        return false;
-      }
-    }
+   <script>
+  const form = document.getElementById('login-form');
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+    validarFormulario();
+  });
+</script>
+<script>
+  function validarFormulario() {
+    const usuario = document.getElementById('username').value;
+    const contraseña = document.getElementById('password').value;
     
-    </script>
+    // Validar usuario y contraseña
+    if (usuario === 'Anitha' && contraseña === '176946') {
+      window.location.href = 'bienvenido.html';
+    } else {
+      alert('Usuario o contraseña incorrectos');
+    }
+  }
+</script>
+
 <div class="flex-container">
   <div class="content-container">
     <div class="form-container">
-      <form name="myform" onsubmit="return validateForm()" method="post">
+      <form id="login-form">
         <h1>
           Login
         </h1>
@@ -145,13 +149,14 @@ input {
         <br>
         <span class="subtitle">USERNAME:</span>
         <br>
-        <input type="text" name="username" value="">
+        <input type="text" id="username" name="username" required>
         <br>
         <span class="subtitle">PASSWORD:</span>
         <br>
-        <input type="password" name="password" value="">
+        <input type="password" id="password" name="password" required>
         <br><br>
         <input type="submit" value="SUBMIT" class="submit-btn">
+     
       </form>
     </div>
   </div>
