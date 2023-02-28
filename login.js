@@ -14,7 +14,7 @@ const database=[
 		  		{
 		  			console.log(user+" Logined in");
             
-		  			window.open('7bienvenido.html','_blank');
+		  			window.open('/bienvenido.html');
 		  			return;
 		  		}
            }
