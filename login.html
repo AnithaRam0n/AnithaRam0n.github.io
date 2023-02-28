@@ -1,157 +1,87 @@
-
 <!DOCTYPE html>
 <html>
-<body>
-<head>  
-<meta name="viewport" content="width=device-width, initial-scale=1">  
-<title> Login Page </title>  
-<style> 
-html {
-  scroll-behavior: smooth;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  background-image: url('https://img.freepik.com/foto-gratis/fondo-espacio-exterior_53876-88651.jpg'); 
-  overflow-x: hidden;
-  background-repeat: no repeat;
-  background-size: 100% 100%;
-  background-attachment: fixed;
-
-
- 
-}
-
-
-
-
-/* ########################################################## */
-
-h2 {
-  color: white;
-
-  font-size: 35px;
-  font-weight: 800;
-}
-
-.flex-container {
-  width: 100vw;
-
-  margin-top: 60px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.content-container {
-  width: 500px;
-  height: 350px;
-}
-
-.form-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  width: 500px;
-  height: 350px;
-
-  margin-top: 5px;
-  padding-top: 20px;
-
-  border-radius: 12px;
-
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-
-  background: #1f1f1f;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.199);
-}
-
-.subtitle {
-  font-size: 11px;
-
-  color: rgba(177, 177, 177, 0.3);
-}
-
-input {
-  border: none;
-  border-bottom: solid rgb(143, 143, 143) 1px;
-
-  margin-bottom: 30px;
-
-  background: none;
-  color: rgba(255, 255, 255, 0.555);
-
-  height: 35px;
-  width: 300px;
-}
-
-.submit-btn {
-  cursor: pointer;
-
-  border: none;
-  border-radius: 8px;
-
-  box-shadow: 2px 2px 7px #38d39f70;
-
-  background: #38d39f;
-  color: rgba(255, 255, 255, 0.8);
-
-  width: 80px;
-
-  transition: all 1s;
-}
-
-.submit-btn:hover {
-  color: rgb(255, 255, 255);
-
-  box-shadow: none;
-}
-
-</style>   
-</head>    
-<body>
-	<div class="container">
-		<h2>Login Form</h2>
-		<form name="loginForm" onsubmit="return validateForm()">
-			<label for="username"><b>Username</b></label>
-			<input type="text" placeholder="Enter Username" name="username" id="username">
-
-			<label for="password"><b>Password</b></label>
-			<input type="password" placeholder="Enter Password" name="password" id="password">
-
-			<button type="submit" class=submit-btn>Login</button>
-		</form>
-		<div id="error"></div>
-	</div>
-
-	<script>
-		function validateForm() {
-			var username = document.forms["loginForm"]["username"].value;
-			var password = document.forms["loginForm"]["password"].value;
-			var error = document.getElementById("error");
-
-			if (username == "") {
-				error.innerHTML = "Please enter your username";
-				return false;
-			}
-
-			if (password == "") {
-				error.innerHTML = "Please enter your password";
-				return false;
-			}
-
-			return true;
-		}
-	</script>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <title>Login Form</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #F8F8F8;
+      }
+      
+      form {
+        background-color: #FFFFFF;
+        border: 1px solid #CCCCCC;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px #CCCCCC;
+        padding: 20px;
+        width: 300px;
+        margin: auto;
+      }
+      
+      h2 {
+        text-align: center;
+        margin-top: 0px;
+      }
+      
+      label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+      
+      input[type="text"], input[type="password"] {
+        width: 100%;
+        padding: 8px;
+        border-radius: 3px;
+        border: 1px solid #CCCCCC;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+      }
+      
+      input[type="submit"] {
+        background-color: #4CAF50;
+        color: #FFFFFF;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+      
+      input[type="submit"]:hover {
+        background-color: #3e8e41;
+      }
+      
+      .error {
+        color: #FF0000;
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <h2>Login Form</h2>
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username">
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password">
+      <input type="submit" value="Login" onclick="validate()">
+      <div class="error" id="error"></div>
+    </form>
+    
+    <script>
+      function validate() {
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        var error = document.getElementById("error");
+        
+        if (username.trim() == "Anitha" || password.trim() == "176946") {
+          window.location = index.html;
+        } else {
+          alert("Error!");
+        }
+      }
+    </script>
+  </body>
 </html>
