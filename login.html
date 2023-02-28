@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html>
 <body>
 <head>  
 <meta name="viewport" content="width=device-width, initial-scale=1">  
-<title> Login al176946 </title>  
+<title> Login Page </title>  
 <style> 
 html {
   scroll-behavior: smooth;
@@ -23,7 +24,12 @@ body {
   background-size: 100% 100%;
   background-attachment: fixed;
 
-  }
+
+ 
+}
+
+
+
 
 /* ########################################################## */
 
@@ -66,14 +72,14 @@ h1 {
   justify-content: center;
   flex-direction: column;
 
-  background: #1B2631;
+  background: #1f1f1f;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.199);
 }
 
 .subtitle {
   font-size: 11px;
 
-  color: rgba(247, 249, 249);
+  color: rgba(177, 177, 177, 0.3);
 }
 
 input {
@@ -95,9 +101,9 @@ input {
   border: none;
   border-radius: 8px;
 
-  box-shadow: 2px 2px 7px #AED6F1;
+  box-shadow: 2px 2px 7px #38d39f70;
 
-  background: #5DADE2;
+  background: #38d39f;
   color: rgba(255, 255, 255, 0.8);
 
   width: 80px;
@@ -110,29 +116,14 @@ input {
 
   box-shadow: none;
 }
-<script>
-function login()
-{
-    var user1,password1
-    user1 = document.getElementById("username").value;
-    password1 = document.getElementById("password").value;
-    if( user=="Anitha" && password=="176946" )
-    {
-        window.location = "index.html";
-    }
-    else
-    {
-        alert("Error")
-    }
-}
-</script>
+
 </style>   
 </head>    
 <body>    
 <div class="flex-container">
   <div class="content-container">
     <div class="form-container">
-      <form>
+      <form action="/action_page.php">
         <h1>
           Login
         </h1>
@@ -140,18 +131,18 @@ function login()
         <br>
         <span class="subtitle">USERNAME:</span>
         <br>
-        <input type="text" id="username" name="username" value="">
+        <input type="text" name="username" value="">
         <br>
         <span class="subtitle">PASSWORD:</span>
         <br>
-        <input type="password" id="password" name="password" value="">
+        <input type="password" name="password" value="">
         <br><br>
-        <input type="submit" value="Ingresar" class="submit-btn" onclick=login()>  
-         </form>
-         
+        <input type="submit" value="SUBMIT" class="submit-btn">
+      </form>
     </div>
   </div>
 </div>
+
 
 </body>
 </html>
