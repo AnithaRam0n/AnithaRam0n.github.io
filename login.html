@@ -116,11 +116,28 @@ input {
 
 </style>   
 </head>    
-<body>    
+<body>
+  <script>
+    function validateform(){
+      var username = document.forms["myForm"]["username"].value;
+      var password = document.forms["myForm"]["password"].value;
+      if (username == "Anitha" && password == "176946")
+      {
+        window.location = "bienvenido.html"
+        return true;
+      }
+      else
+      {
+        alert("Error")
+        return false;
+      }
+    }
+    
+    </script>
 <div class="flex-container">
   <div class="content-container">
     <div class="form-container">
-      <form action="/bienvenido.html">
+      <form name="myform" onsubmit="return validateForm()" method="post">
         <h1>
           Login
         </h1>
