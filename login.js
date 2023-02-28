@@ -3,12 +3,12 @@ function login()
     var user,password
     user = document.getElementById("inputuser").value;
     password = document.getElementById("inputPassword").value;
-    if( user=="dennis" && password=="1234" )
+    if( user=="Anitha" && password=="176946" )
     {
-        window.location = "index2.html";
+        window.location = "index.html";
     }
     else
     {
-        alert("EERRor")
+        alert("Error")
     }
 }
