@@ -33,7 +33,7 @@ body {
 
 /* ########################################################## */
 
-h1 {
+h2 {
   color: white;
 
   font-size: 35px;
@@ -119,30 +119,39 @@ input {
 
 </style>   
 </head>    
-<body>    
-<div class="flex-container">
-  <div class="content-container">
-    <div class="form-container">
-      <form action="/action_page.php">
-        <h1>
-          Login
-        </h1>
-        <br>
-        <br>
-        <span class="subtitle">USERNAME:</span>
-        <br>
-        <input type="text" name="username" value="">
-        <br>
-        <span class="subtitle">PASSWORD:</span>
-        <br>
-        <input type="password" name="password" value="">
-        <br><br>
-        <input type="submit" value="SUBMIT" class="submit-btn">
-      </form>
-    </div>
-  </div>
-</div>
+<body>
+	<div class="container">
+		<h2>Login Form</h2>
+		<form name="loginForm" onsubmit="return validateForm()">
+			<label for="username"><b>Username</b></label>
+			<input type="text" placeholder="Enter Username" name="username" id="username">
 
+			<label for="password"><b>Password</b></label>
+			<input type="password" placeholder="Enter Password" name="password" id="password">
 
+			<button type="submit" class=submit-btn>Login</button>
+		</form>
+		<div id="error"></div>
+	</div>
+
+	<script>
+		function validateForm() {
+			var username = document.forms["loginForm"]["username"].value;
+			var password = document.forms["loginForm"]["password"].value;
+			var error = document.getElementById("error");
+
+			if (username == "") {
+				error.innerHTML = "Please enter your username";
+				return false;
+			}
+
+			if (password == "") {
+				error.innerHTML = "Please enter your password";
+				return false;
+			}
+
+			return true;
+		}
+	</script>
 </body>
 </html>
